@@ -277,6 +277,23 @@ typedef enum OMX_INDEXTYPE {
        private indexes are not guaranteed unique and therefore should
        only be sent to the appropriate component. */
 
+#ifdef SPRD_HARDWARE
+    /* for Android Native Window */
+#define SPRD_INDEX_PARAM_ENABLE_ANB "OMX.google.android.index.enableAndroidNativeBuffers"
+    OMX_IndexParamEnableAndroidBuffers         = 0x7F000011,
+#define SPRD_INDEX_PARAM_GET_ANB "OMX.google.android.index.getAndroidNativeBufferUsage"
+    OMX_IndexParamGetAndroidNativeBuffer       = 0x7F000012,
+#define SPRD_INDEX_PARAM_USE_ANB "OMX.google.android.index.useAndroidNativeBuffer2"
+    OMX_IndexParamUseAndroidNativeBuffer2      = 0x7F000013,
+    /* for Android Store Metadata Inbuffer */
+#define SPRD_INDEX_PARAM_STORE_METADATA_BUFFER "OMX.google.android.index.storeMetaDataInBuffers"
+    OMX_IndexParamStoreMetaDataBuffer          = 0x7F000014,
+#define SPRD_INDEX_PARAM_PREPEND_SPSPPS_TO_IDR "OMX.google.android.index.prependSPSPPSToIDRFrames"
+    OMX_IndexParamPrependSPSPPSToIDR           = 0x7F000015,
+#define SPRD_INDEX_CONFIG_THUMBNAIL_MODE "OMX.sprd.index.ThumbnailMode"
+    OMX_IndexConfigThumbnailMode               = 0x7F000016,
+#endif
+
 #ifdef MTK_HARDWARE
     OMX_IndexVendorMtkOmxVdecTimeSource        = 0x7F000001,
     OMX_IndexVendorMtkOmxVdecThumbnailMode     = 0x7F00000A,
